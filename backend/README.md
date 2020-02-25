@@ -1,1 +1,1 @@
-# Learnch Server
+# Learnch API  ![LearchAPI](https://img.shields.io/badge/Learnch-API-red?style=flat-square)
