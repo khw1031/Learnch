@@ -18,6 +18,6 @@ class App {
   };
 }
 
-const app = new App().app;
+const { app } = new App();
 
 export { app };
