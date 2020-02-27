@@ -1,5 +1,6 @@
 import express, { Application } from "express";
 import cookieParser from "cookie-parser";
+import compression from "compression";
 import { healthChecker, cors } from "./middlewares";
 
 class App {
@@ -16,10 +17,12 @@ class App {
   };
 
   private setMiddleware = (): void => {
-    this.app.use(express.json());
-    this.app.use(express.urlencoded({ extended: true }));
-    this.app.use(cookieParser());
-    this.app.use(cors());
+    const { app } = this;
+    app.use(express.json());
+    app.use(express.urlencoded({ extended: true }));
+    app.use(cookieParser());
+    app.use(cors());
+    app.use(compression());
   };
 
   private setRoutes = (): void => {
