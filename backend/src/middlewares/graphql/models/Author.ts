@@ -22,6 +22,9 @@ export const Author: GraphQLModel<any> = {
       name: String
       books: [Book]
     }
+    type Query {
+      getAuthors: [Author]
+    }
   `,
   resolver: {
     getAuthors: () => books.map(({ author }) => author),

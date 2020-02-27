@@ -22,6 +22,9 @@ export const Book: GraphQLModel<any> = {
       title: String
       author: Author
     }
+    type Query {
+      getBooks: [Book]
+    }
   `,
   resolver: {
     getBooks: () => books,
