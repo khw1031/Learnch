@@ -1,5 +1,7 @@
 {
   "compilerOptions": {
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
     "target": "es6",
     "module": "commonjs",
     "noImplicitAny": true,
@@ -7,10 +9,11 @@
     "strictFunctionTypes": true,
     "moduleResolution": "node",
     "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
+    "forceConsistentCasingInFileNames": false,
     "typeRoots": ["./node_modules/@types"],
     "noUnusedLocals": true,
-    "baseUrl": "src",
+    "baseUrl": ".",
+    "declaration": false,
     "sourceMap": true,
     "outDir": "dist",
     "rootDir": "src"
