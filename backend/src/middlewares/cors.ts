@@ -1,6 +1,6 @@
 import { RequestHandler } from "express";
 import CORS from "cors";
-import origin from "../config/origin";
+import { origin } from "../config";
 
 const env = process.env.NODE_ENV || "development";
 

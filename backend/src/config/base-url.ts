@@ -8,4 +8,4 @@ const baseUrl: BaseUrl = {
   production: "https://learnch.co",
 };
 
-export default baseUrl;
+export { baseUrl };

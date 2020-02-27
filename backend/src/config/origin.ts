@@ -8,4 +8,4 @@ const origin: Origin = {
   production: ["https://learnch.co", "https://www.learnch.co"],
 };
 
-export default origin;
+export { origin };
