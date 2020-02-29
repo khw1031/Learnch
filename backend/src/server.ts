@@ -1,27 +1,17 @@
 /* eslint-disable no-console */
-import { ApolloServer } from "apollo-server-express";
-import { app } from "./app";
-import { baseUrl, origin } from "./config";
-import schema from "./middlewares/graphql/schema";
+import { ApolloServer } from "apollo-server";
+import { typeDefs, resolvers } from "./graphql";
 
-app.set("port", process.env.PORT || 7000);
-app.set("env", process.env.NODE_ENV || "development");
+const port = process.env.PORT || 7000;
+const env = process.env.NODE_ENV || "development";
 
 const server = new ApolloServer({
-  schema,
+  typeDefs,
+  resolvers,
+  context: ({ req }) => ({ req }),
 });
 
-server.applyMiddleware({
-  app,
-  cors: {
-    credentials: true,
-    origin: origin[app.get("env")],
-  },
-});
-
-app.listen(app.get("port"), () => {
-  console.log(`Learnch is running at ${baseUrl[app.get("env")]}`);
-  console.log(`GraphQL server is running at ${baseUrl[app.get("env")]}${server.graphqlPath}`);
-  console.log(`port: ${app.get("port")}`);
-  console.log(`mode: ${app.get("env")} mode`);
+server.listen(port).then(({ url }) => {
+  console.log(`GraphQL server is running at ${url}`);
+  console.log(`mode: ${env} mode`);
 });
