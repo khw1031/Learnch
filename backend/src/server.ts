@@ -4,14 +4,6 @@ import { ApolloServer } from "apollo-server";
 import { typeDefs, resolvers } from "./graphql";
 import { config } from "node-config-ts";
 
-console.log(process.env.NODE_ENV);
-console.log(process.env.SECRET_KEY);
-console.log({ port: config.server_port });
-
-const port = config.server_port || 7000;
-const env = process.env.NODE_ENV || "development";
-console.log(config.allowed_origins);
-
 const server = new ApolloServer({
   typeDefs,
   resolvers,
@@ -20,14 +12,14 @@ const server = new ApolloServer({
   playground: true, // ?
   debug: true, // ?
   cors: {
-    credentials: true,
     origin: config.allowed_origins,
+    credentials: true,
   },
 });
 
-server.listen(port).then(({ url }) => {
+server.listen(config.server_port).then(({ url }) => {
   console.log(`GraphQL server is running at ${url}`);
   console.log(`port: ${config.server_port}`);
   console.log(`allowed_origins: `, config.allowed_origins);
-  console.log(`mode: ${env} mode`);
+  console.log(`mode: ${process.env.NODE_ENV} mode`);
 });
