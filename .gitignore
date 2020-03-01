@@ -1,7 +1,6 @@
-# File created using '.gitignore Generator' for Visual Studio Code: https://bit.ly/vscode-gig
-
-# Created by https://www.gitignore.io/api/visualstudiocode,macos,node,react
-# Edit at https://www.gitignore.io/?templates=visualstudiocode,macos,node,react
+# env
+.env.development
+.env.production
 
 ### macOS ###
 # General

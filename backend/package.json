@@ -1,21 +1,23 @@
 {
   "name": "learnch-backend",
-  "description": "learch api server",
+  "description": "learnch api server",
   "private": true,
   "version": "1.0.0",
   "author": "Hyunwoo Kim <khw1031@gmail.com>",
   "license": "MIT",
   "scripts": {
+    "postinstall": "node-config-ts",
     "dev": "NODE_ENV=development nodemon --exec ts-node src/server.ts",
     "build": "NODE_ENV=production tsc --sourceMap false",
-    "start": "yarn build && node ./dist/server.js",
+    "start": "yarn build && NODE_ENV=production node ./dist/src/server.js",
     "lint": "eslint ./src/**/*.ts"
   },
   "dependencies": {
     "apollo-server": "^2.10.1",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "graphql": "^14.6.0"
+    "graphql": "^14.6.0",
+    "node-config-ts": "^3.0.4"
   },
   "devDependencies": {
     "@types/graphql": "^14.5.0",
