@@ -1,20 +1,31 @@
 {
   "compilerOptions": {
-    "jsx": "react",
-    "moduleResolution": "node",
-    "module": "commonjs",
-    "target": "es5",
-    "lib": ["ES6", "ESNext", "DOM"],
-    "allowJs": true,
-    "sourceMap": true,
-    "noImplicitAny": true,
     "baseUrl": ".",
-    "outDir": "./dist",
     "paths": {
       "components/": ["./src/components/"]
     },
-    "allowSyntheticDefaultImports": true
+    "moduleResolution": "node",
+    "incremental": true,
+    "target": "ES2015",
+    "lib": ["ES6", "DOM"],
+    "allowJs": true,
+    "checkJs": true,
+    "sourceMap": true,
+    "jsx": "react",
+    "strict": true,
+    "allowSyntheticDefaultImports": true,
+    "outDir": "dist",
+    // Linter Checks
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    // Advanced
+    "noEmitOnError": true
+    // "traceResolution": true
+    // "listFiles": true,
+    // "listEmittedFiles": true
   },
   "include": ["./src/**/*"],
-  "exclude": ["./node_modules/"]
+  "exclude": ["**/*.spec.ts", "**/*.spec.tsx"]
 }

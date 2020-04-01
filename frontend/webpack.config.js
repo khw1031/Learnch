@@ -6,16 +6,18 @@ module.exports = {
   entry: {
     app: "./src/index.tsx",
   },
-  target: "web",
+  devtool: "eval-cheap-source-map",
   resolve: {
-    extensions: [".ts", ".tsx", ".js"],
+    alias: {
+      components: path.resolve(__dirname, "src/components"),
+    },
+    extensions: [".ts", ".tsx", ".js", ".jsx", ".json"],
   },
   module: {
     rules: [
       {
         test: /\.tsx?$/,
         use: "ts-loader",
-        exclude: ["/node_modules/"],
       },
     ],
   },
