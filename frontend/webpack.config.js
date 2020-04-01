@@ -8,7 +8,7 @@ module.exports = {
   entry: {
     app: "./src/index.tsx",
   },
-  devtool: "eval-cheap-source-map",
+  devtool: "eval-cheap-module-source-map",
   devServer: {
     hot: true,
   },

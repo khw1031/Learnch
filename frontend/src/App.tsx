@@ -4,6 +4,7 @@ import { css } from "@emotion/core";
 
 function App() {
   const [name, setName] = useState("kim");
+  console.log(name);
   return (
     <div
       css={css`
@@ -11,7 +12,7 @@ function App() {
         font-size: 2rem;
       `}
     >
-      hi!: {name}
+      hi!!: {name}
       <input type="text" onChange={e => setName(e.target.value)} />
     </div>
   );
