@@ -17,7 +17,6 @@ const MagicScriptTag = () => {
     const root = document.documentElement;
     let colorMode = "light"
 
-
     const hasUsedToggle = typeof persistedPreference === "string";
 
     colorMode = hasUsedToggle
@@ -55,9 +54,9 @@ const FallbackStyles = () => {
 }
 
 export const onRenderBody = ({ setPreBodyComponents, setHeadComponents }) => {
-  setHeadComponents(<FallbackStyles />)
-  setPreBodyComponents(<MagicScriptTag />)
-}
+  setHeadComponents(<FallbackStyles key={`theme__fallback-styles`} />);
+  setPreBodyComponents(<MagicScriptTag key={`theme__scripts`} />);
+};
 
 export const wrapPageElement = ({ element }) => {
   return <App>{element}</App>
