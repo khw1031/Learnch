@@ -1,6 +1,6 @@
-import React from "react"
-import { ThemeProvider } from "../context/themeContext"
-import GlobalStyle from "../styles/globalStyle"
+import React from "react";
+import { ThemeProvider } from "../context/themeContext";
+import GlobalStyle from "../styles/globalStyle";
 
 function App({ children }) {
   return (
@@ -8,7 +8,7 @@ function App({ children }) {
       <GlobalStyle />
       {children}
     </ThemeProvider>
-  )
+  );
 }
 
-export default App
+export default App;
